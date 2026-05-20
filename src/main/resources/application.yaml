@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: framegenesis-ai
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/framegenesis_ai
+    username: postgres
+    password: postgres007
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
