@@ -3,9 +3,9 @@ spring:
     name: framegenesis-ai
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/framegenesis_ai
-    username: postgres
-    password: postgres007
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/framegenesis_ai}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
 
   jpa:
     hibernate:
@@ -19,3 +19,11 @@ spring:
 
 server:
   port: 8080
+
+gemini:
+  api:
+    key: ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-2.5-flash}
+
+jwt:
+  secret: ${JWT_SECRET:framegenesis-local-development-secret-change-before-production}
